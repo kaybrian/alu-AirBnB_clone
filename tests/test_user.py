@@ -1,31 +1,27 @@
 #!/usr/bin/python3
-"""Unittest for User class"""
+
+"""Unittest for User Class."""
 
 import unittest
+
 from models.user import User
+
 from models.base_model import BaseModel
 
 
-class TestUser(unittest.TestCase):
-    """
-        Unit tests for the user model
-    """
+class TestCity(unittest.TestCase):
+    """Test cases User class."""
 
-    @classmethod
-    def setUpClass(cls):
-        """
-        Global User object
-        """
-        cls.obj = User()
+    def test_instance(self):
+        """test instance."""
+        user = User()
+        self.assertIsInstance(user, User)
 
-    def test_has_inherited_attributes(self):
-        """
-        User model should have attributes
-        id, created_at, update_at
-        """
-        self.assertIn('id', self.obj.__dict__)
-        self.assertIn('created_at', self.obj.__dict__)
-        self.assertIn('updated_at', self.obj.__dict__)
+    def test_is_class(self):
+        """test instance."""
+        user = User()
+        self.assertEqual(str(type(user)),
+                         "<class 'models.user.User'>")
 
     def test_is_subclass(self):
         """test is_subclass."""
@@ -66,5 +62,5 @@ class TestUser(unittest.TestCase):
         self.assertEqual(my_user.first_name, "Bar")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
