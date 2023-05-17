@@ -28,19 +28,42 @@ class TestUser(unittest.TestCase):
         self.assertIn('updated_at', self.obj.__dict__)
 
     def test_is_subclass(self):
-        """
-        Prove User is subclass of BaseModel
-        """
-        self.assertTrue(issubclass(self.obj.__class__, BaseModel), True)
+        """test is_subclass."""
+        user = User()
+        self.assertTrue(issubclass(type(user), BaseModel))
 
-    def test_non_inheritted_atts_exists(self):
-        """
-        Non inherited attributes(atts) should exist
-        """
-        self.assertTrue(hasattr(User, 'email'))
-        self.assertTrue(hasattr(User, 'password'))
-        self.assertTrue(hasattr(User, 'first_name'))
-        self.assertTrue(hasattr(User, 'last_name'))
+    def test_id(self):
+        """test email."""
+        my_user = User()
+        self.assertIsNotNone(my_user.id)
+
+    def test_email(self):
+        """test email."""
+        my_user = User()
+        self.assertEqual(my_user.email, "")
+        my_user.email = "airbnb@mail.com"
+        self.assertEqual(my_user.email, "airbnb@mail.com")
+
+    def test_password(self):
+        """test password."""
+        my_user = User()
+        self.assertEqual(my_user.password, "")
+        my_user.password = "root"
+        self.assertEqual(my_user.password, "root")
+
+    def test_first_name(self):
+        """test first name."""
+        my_user = User()
+        self.assertEqual(my_user.first_name, "")
+        my_user.first_name = "Betty"
+        self.assertEqual(my_user.first_name, "Betty")
+
+    def test_last_name(self):
+        """test last name."""
+        my_user = User()
+        self.assertEqual(my_user.last_name, "")
+        my_user.first_name = "Bar"
+        self.assertEqual(my_user.first_name, "Bar")
 
 
 if __name__ == '__main__':
