@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 """
 convert the dictionary representation to a JSON string.
 """
