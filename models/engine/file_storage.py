@@ -42,8 +42,6 @@ class FileStorage:
     def reload(self):
         """
         deserializes the JSON file to __objects (only if the JSON file
-        (__file_path) exists ; otherwise, do nothing. If the file does not
-        exist, no exception should be raised)
         """
         from models.base_model import BaseModel
         from models.user import User
@@ -52,7 +50,6 @@ class FileStorage:
         from models.place import Place
         from models.amenity import Amenity
         from models.review import Review
-
 
         try:
             with open(self.__file_path) as file:
