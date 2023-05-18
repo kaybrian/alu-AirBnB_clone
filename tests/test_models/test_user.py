@@ -44,8 +44,8 @@ class TestCity(unittest.TestCase):
         """test password."""
         my_user = User()
         self.assertEqual(my_user.password, "")
-        my_user.password = "root"
-        self.assertEqual(my_user.password, "root")
+        my_user.password = "peoplePower"
+        self.assertEqual(my_user.password, "peoplePower")
 
     def test_first_name(self):
         """test first name."""
