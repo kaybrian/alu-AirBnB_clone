@@ -5,7 +5,7 @@ Module documentation
 
 import unittest
 from models.base_model import BaseModel
-from model.Place import Place
+from models.Place import Place
 from models.city import City
 from models.user import User
 
