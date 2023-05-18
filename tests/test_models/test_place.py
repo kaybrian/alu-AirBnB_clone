@@ -1,30 +1,31 @@
 #!/usr/bin/python3
-"""
-Module documentation
-"""
+
+"""Unittest for Place Class."""
 
 import unittest
-from models.base_model import BaseModel
+
 from models.place import Place
 from models.city import City
 from models.user import User
 
+from models.base_model import BaseModel
 
-class TestPlace(BaseModel):
-    """ Test Place Class """
 
-    def test_isntance(self):
-        """ Test instance """
-        p = Place()
-        self.assertIsInstance(p, Place)
+class TestPlace(unittest.TestCase):
+    """Test cases Place class."""
+
+    def test_instance(self):
+        """test instance."""
+        place = Place()
+        self.assertIsInstance(place, Place)
 
     def test_is_subclass(self):
-        """test the instance of sub classes"""
-        p = Place()
-        self.assertTrue(issubclass(type(p), BaseModel))
+        """test is_subclass."""
+        place = Place()
+        self.assertTrue(issubclass(type(place), BaseModel))
 
-    def test_attrs(self):
-        """test attributes"""
+    def test_is_attr(self):
+        """test instance."""
         city = City()
         user = User()
         place = Place()
