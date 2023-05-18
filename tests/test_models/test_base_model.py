@@ -1,6 +1,6 @@
 import unittest
 from models.base_model import BaseModel
-
+import time
 class TestBaseModel(unittest.TestCase):
     """Test cases for BaseModel ."""
 
