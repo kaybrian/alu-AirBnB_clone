@@ -1,13 +1,6 @@
 #!/usr/bin/python3
 """Defines FileStorage class."""
 import json
-from models.user import User
-from models.base_model import BaseModel
-from models.state import State
-from models.city import City
-from models.place import Place
-from models.amenity import Amenity
-from models.review import Review
 
 
 class FileStorage:
@@ -45,6 +38,7 @@ class FileStorage:
         (__file_path) exists ; otherwise, do nothing. If the file does not
         exist, no exception should be raised)
         """
+        
 
         try:
             with open(self.__file_path) as file:
