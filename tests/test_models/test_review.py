@@ -2,27 +2,34 @@
 """
 Module documentation
 """
-
-from models.base_model import BaseModel
-from models.review import Review
 import unittest
 
+from models.review import Review
 
-class TestReview(unittest):
-    """ Test the Review Class """
+from models.base_model import BaseModel
 
-    def test_isinstance(self):
-        """ Test if user is an instance of BaseModel """
+
+class TestReview(unittest.TestCase):
+    """Test cases Review class."""
+
+    def test_instance(self):
+        """test instance."""
         review = Review()
         self.assertIsInstance(review, Review)
 
+    def test_is_class(self):
+        """test instance."""
+        review = Review()
+        self.assertEqual(str(type(review)),
+                         "<class 'models.review.Review'>")
+
     def test_is_subclass(self):
-        """test the instance of sub classes"""
+        """test is_subclass."""
         review = Review()
         self.assertTrue(issubclass(type(review), BaseModel))
 
     def test_text(self):
-        """test text"""
+        """test is_subclass."""
         review = Review()
         self.assertIsNotNone(review.id)
         self.assertEqual(review.text, "")
