@@ -8,7 +8,7 @@ from models.review import Review
 import unittest
 
 
-class Review(unittest):
+class TestReview(unittest):
     """ Test the Review Class """
 
     def test_isinstance(self):
