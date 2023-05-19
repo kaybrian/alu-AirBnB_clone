@@ -43,9 +43,7 @@ class TestFileStorage_instantiation(unittest.TestCase):
 
 
 class TestFileStorage_methods(unittest.TestCase):
-    """
-        Unittests to testing methods of the 'FileStorage' class.
-    """
+    """Unittests for testing methods of the FileStorage class."""
 
     @classmethod
     def setUp(self):
@@ -168,6 +166,8 @@ class TestFileStorage_methods(unittest.TestCase):
         self.assertIn("Amenity." + am.id, objs)
         self.assertIn("Review." + rv.id, objs)
 
+    def test_reload_no_file(self):
+        self.assertRaises(FileNotFoundError, models.storage.reload())
 
     def test_reload_with_arg(self):
         with self.assertRaises(TypeError):
