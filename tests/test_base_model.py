@@ -55,12 +55,6 @@ class TestBaseModel_instantiation(unittest.TestCase):
 
     def test_str_representation(self):
         # 1. We’re creating a datetime object.
-        # 2. We’re creating a BaseModel object.
-        # 3. We’re setting the id, created_at, and updated_at,
-        # attributes of the BaseModel object.
-        # 4. We’re calling the __str__ method of the BaseModel object.
-        # 5. We’re checking that the output of the __str__ method,
-        # contains the id, created_at, and updated_at attributes.
         dt = datetime.today()
         dt_repr = repr(dt)
         bm = BaseModel()
@@ -78,12 +72,6 @@ class TestBaseModel_instantiation(unittest.TestCase):
 
     def test_instantiation_with_kwargs(self):
         # 1. We create a new instance of the BaseModel class.
-        # 2. We set the id attribute to “345”.
-        # 3. We set the created_at attribute to the current time.
-        # 4. We set the updated_at attribute to the current time.
-        # 5. We check that the id attribute is set to “345”.
-        # 6. We check that the created_at attribute is set to the current time.
-        # 7. We check that the updated_at attribute is set to the current time.
         dt = datetime.today()
         dt_iso = dt.isoformat()
         bm = BaseModel(id="345", created_at=dt_iso, updated_at=dt_iso)
@@ -97,14 +85,7 @@ class TestBaseModel_instantiation(unittest.TestCase):
 
     def test_instantiation_with_args_and_kwargs(self):
         # 1. We create a datetime object with the current time.
-        # 2. We convert the datetime object to a string in ISO 8601 format.
-        # 3. We create a BaseModel object with the id “345” and,
-        # the created_at and updated_at attributes set to the ISO 8601 string.
-        # 4. We check that the id attribute is set to “345”.
-        # 5. We check that the created_at attribute is set to,
-        # the datetime object.
-        # 6. We check that the updated_at attribute is set to,
-        # the datetime object.
+
         dt = datetime.today()
         dt_iso = dt.isoformat()
         bm = BaseModel("12", id="345", created_at=dt_iso, updated_at=dt_iso)
