@@ -89,21 +89,14 @@ class HBNBCommand(cmd.Cmd):
         Prints all string representation of all instances
         based or not on the class name
         """
-        all_instances = storage.all()
-        if len(line) == 0:
-            all_objs = []
-            for k, obj in all_instances.items():
-                all_objs.append(str(obj))
-            print(all_objs)
-        elif line in HBNBCommand.valid_classes.keys():
-            objs = []
-            for k, v in all_instances.items():
-                if line == v.__class__.__name__:
-                    key = line + "." + str(v.id)
-                    objs.append(str(all_instances[key]))
-            print(objs)
+        args = shlex.split(arg)
+        if not arg:
+            print([str(value) for value in models.storage.all().values()])
+        elif args[0] not in models.classes:
+            print("** class doesn't exist **")
         else:
-            self.perror(2)
+            print([str(value) for key, value in models.storage.all().items()
+                   if key.split('.')[0] == args[0]])
 
     def do_update(self, arg):
         """
